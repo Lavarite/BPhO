@@ -121,6 +121,7 @@ const Navigation = () => {
         '12': Pages.Task12,
         'Vision': Pages.VisionPage,
         'Problems': Pages.SolutionsPage,
+        'Research': Pages.ResearchPage,
     };
 
     useEffect(() => {
@@ -151,7 +152,6 @@ const Navigation = () => {
         {
             id: 'overview',
             title: 'Overview',
-            icon: <HomeIcon className="w-5 h-5" />,
             items: [
                 { id: 'home', title: 'Project Hub', description: 'Introduction & quick links' }
             ]
@@ -172,7 +172,7 @@ const Navigation = () => {
             icon: <ZapIcon className="w-5 h-5" />,
             items: [
                 { id: '3', title: 'Law of Reflection', description: 'Fermat\'s principle demonstration' },
-                { id: '4', title: 'Snell\'s Law', description: 'Refraction via Fermat\'s principle' }
+                { id: '4', title: 'Snell\'s Law', description: 'Refraction via Snell\'s law' }
             ]
         },
         {
@@ -200,8 +200,9 @@ const Navigation = () => {
             title: 'Extensions',
             icon: <SmartphoneIcon className="w-5 h-5" />,
             items: [
-                { id: 'Vision', title: 'Vision Simulation', description: 'Interactive eye vision simulator' },
-                { id: 'Problems', title: 'Problem Solutions', description: 'Ray optics worksheet' }
+                { id: 'Vision', title: 'Vision Simulation', description: 'Interactive eye vision simulation' },
+                { id: 'Problems', title: 'Problem Solutions', description: 'Ray optics worksheet' },
+                { id: 'Research', title: 'Research', description: 'Gravitational lensing' }
             ]
         }
     ];

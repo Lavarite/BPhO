@@ -159,7 +159,7 @@ export const Task11 = ({ isSmallViewport, headerHeight }) => {
       {/* Focusing angles section */}
       <div className="mt-6 p-4 bg-indigo-50 border border-indigo-200 rounded-lg text-sm leading-relaxed">
         <h3 className="font-semibold text-indigo-800 mb-2">Focusing (caustic) incidence angles</h3>
-        <p className="mb-2 text-gray-700">At certain incidence angles the derivative dε/dθ vanishes, causing a concentration of rays - a <em>caustic</em> - that makes the rainbow especially bright for that wavelength. These angles correspond to the extrema plotted as coloured dots:</p>
+        <p className="mb-2 text-gray-700">At specific incidence angles, the derivative dε/dθ becomes zero. This means the change in the elevation angle is minimal, so deflected rays tend to accumulate, forming a caustic and intensifying brightness at the corresponding wavelengths. The angles below mark these extrema and are plotted as coloured dots:</p>
         <ul className="grid grid-cols-2 gap-1 list-disc list-inside">
           {critPoints.map((pt) => (
             <li key={`focus_${pt.id}`} className="text-gray-800">
@@ -167,9 +167,7 @@ export const Task11 = ({ isSmallViewport, headerHeight }) => {
             </li>
           ))}
         </ul>
-        <p className="mt-2 text-gray-700">
-          Near these angles, a narrow range of incidence directions is refracted/ reflected into nearly the same outgoing direction, intensifying the observed colour band.
-        </p>
+        <p className="mt-2 text-gray-700">Higher frequency (blue/violet) light generally focuses at different angles than lower frequency (red) light due to dispersion.</p>
       </div>
 
       <ElevationFrequencyChart
@@ -370,12 +368,8 @@ const ElevationFrequencyChart = ({ freqData, showPrimary, showSecondary, isSmall
             Different frequencies of light have different refractive indices in water, causing them to bend by different amounts and exit the droplet at different angles.
           </p>
           <div className="space-y-2">
-            <p>
-              Higher frequency (blue/violet light) has a higher refractive index, creating a larger deviation angle and appearing at higher elevation angles.
-            </p>
-            <p>
-              Lower frequency (red light) has a lower refractive index, creating a smaller deviation angle and appearing at lower elevation angles.
-            </p>
+            <p>Higher frequency (blue/violet) light</p>
+            <p>Lower frequency (red) light</p>
           </div>
         </div>
       </Accordion>

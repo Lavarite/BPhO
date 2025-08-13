@@ -12,3 +12,4 @@ export { Task12 } from './task12';
 export { HomePage } from './home';
 export { VisionPage } from './vision';
 export { SolutionsPage } from './solutions';
+export { ResearchPage } from './research';

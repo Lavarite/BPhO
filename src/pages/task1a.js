@@ -74,9 +74,9 @@ export const Task1a = ({ isSmallViewport }) => {
         <div className={`w-full ${isSmallViewport ? '' : 'max-w-7xl mx-auto p-4'}`}>
             <h1 className="text-2xl font-bold mb-6 text-gray-800">Task 1a: Crown Glass Refractive Index</h1>
 
-            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6`}>
+            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6 items-start`}>
                 
-                <div className={`${isSmallViewport ? 'col-span-1' : 'col-span-6'} bg-white border border-gray-200 rounded-lg p-4 shadow relative pb-10`}>
+                <div className={`${isSmallViewport ? 'col-span-1' : 'col-span-6'} bg-white border border-gray-200 rounded-lg p-4 shadow relative pb-10 h-fit`}>
                     <h2 className="text-xl font-semibold text-gray-700 mb-1">Refractive Index vs. Wavelength</h2>
                     <p className="text-sm text-gray-500 mb-4">BK7 Crown Glass (Sellmeier Equation)</p>
                     <ZoomableChartWrapper data={chartData} xKey="wavelength" yKeys={['n']} height={isSmallViewport ? 300 : 400}>
@@ -150,11 +150,14 @@ export const Task1a = ({ isSmallViewport }) => {
                             <h4 className="font-semibold text-base text-gray-800 mb-2">The Sellmeier Equation</h4>
                             <p className="mb-2">
                                 The refractive index of BK7 crown glass varies with wavelength due to dispersion, 
-                                described by the Sellmeier equation:
+                                described by the Sellmeier equation. This is an empirical relationship between refractive index and wavelength for a transparent medium:
                             </p>
                             <div className="bg-gray-100 p-2 mt-1 rounded text-xs font-mono">
                                 n²(λ) = 1 + Σ(A<sub>i</sub>λ² / (λ² - B<sub>i</sub>))
                             </div>
+                             <p className="mt-2 text-xs text-gray-600">
+                                 Reference: <a href="https://link.springer.com/rwe/10.1007/978-1-4419-6247-8_10447" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Sellmeier equation (Encyclopedia of Astrobiology)</a>
+                             </p>
                         </div>
 
                         <div>
@@ -174,11 +177,24 @@ export const Task1a = ({ isSmallViewport }) => {
                             <h4 className="font-semibold text-base text-gray-800 mb-2">Observed Behavior</h4>
                             <ul className="list-disc pl-5 space-y-1">
                                 <li><strong>Normal dispersion</strong>: n decreases with increasing λ</li>
-                                <li><strong>Blue light</strong>: Higher refractive index (~1.52)</li>
+                                <li><strong>Purple light</strong>: Higher refractive index (~1.53)</li>
                                 <li><strong>Red light</strong>: Lower refractive index (~1.51)</li>
-                                <li><strong>Applications</strong>: Prisms, achromatic lenses, optical systems</li>
                             </ul>
                         </div>
+
+                         <div>
+                             <h4 className="font-semibold text-base text-gray-800 mb-2">Applications</h4>
+                             <ul className="list-disc pl-5 space-y-1">
+                                 <li>
+                                     <strong>Prism spectrometers</strong>: Analyse emitted spectral lines to determine composition. 
+                                     <a href="https://en.wikipedia.org/wiki/Prism_spectrometer" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">Learn more</a>
+                                 </li>
+                                 <li>
+                                     <strong>Achromatic lenses</strong>: Designed to mitigate chromatic distortion/aberration. 
+                                     <a href="https://www.vyoptics.com/what-is-achromatic-lens-and-why-use-an-achromatic-lens.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">Learn more</a>
+                                 </li>
+                             </ul>
+                         </div>
                     </Accordion>
                 </div>
             </div>

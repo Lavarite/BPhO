@@ -5,13 +5,12 @@ import { ImageUploadControls } from "../components/ImageUploadControls";
 import useImage from "use-image";
 import sampleImageSrc from "../components/example anamorphic.jpg";
 import {layout} from "../design-guidelines";
-import { hypot, atan2, PI } from "../math_functions";
+import { hypot, atan2, PI, abs } from "../math_functions";
 
 import Accordion from '../components/Accordion';
 
 export const Task10 = ({ isSmallViewport }) => {
   const [image, setImage] = useState(null);
-  const [isSelected, setIsSelected] = useState(false);
   const [imageProcessing, setImageProcessing] = useState(false);
   const [transformedImage, setTransformedImage] = useState(null);
   const [Rf, setRf] = useState(3);
@@ -186,9 +185,7 @@ export const Task10 = ({ isSmallViewport }) => {
     setTransformedImage(transformed);
   }, [origBmp, Rf, arcDegrees, createAnamorphicTransform]);
 
-  const deselectOnEmpty = useCallback((e) => {
-    if (e.target === e.target.getStage()) setIsSelected(false);
-  }, []);
+  const deselectOnEmpty = useCallback(() => {}, []);
 
   const gridHeight = isSmallViewport ? "320px" : "49vh";
 

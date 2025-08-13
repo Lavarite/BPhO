@@ -137,10 +137,10 @@ export const Task2 = ({ isSmallViewport }) => {
         <div className={`w-full ${isSmallViewport ? '' : 'max-w-7xl mx-auto p-4'}`}>
             <h1 className="text-2xl font-bold mb-6 text-gray-800">Task 2: Thin Lens Equation Verification</h1>
 
-            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6`}>
+            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6 items-start`}>
                 
                 <div className={`${isSmallViewport ? 'col-span-1' : 'col-span-6'}`}>
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 shadow mb-6 relative pb-10">
+                    <div className="bg-white border border-gray-200 rounded-lg p-4 shadow mb-6 relative pb-10 h-fit">
                         <h2 className="text-xl font-semibold text-gray-700 mb-1">1/v vs. 1/u for a Converging Lens</h2>
                         <p className="text-sm text-gray-500 mb-4">Experimental data and line of best fit.</p>
                         <ZoomableChartWrapper data={lineData} xKey="oneOverU" yKeys={['bestFit']} height={isSmallViewport ? 300 : 350} initialYDomain={[0, intercept + 0.005]} initialXDomain={[0, 0.055]}>
@@ -239,9 +239,7 @@ export const Task2 = ({ isSmallViewport }) => {
                             <div className="bg-gray-100 p-2 mt-1 rounded text-xs font-mono">
                                 1/f = 1/u + 1/v
                             </div>
-                            <p className="mt-2 text-xs">
-                                Rearranging: 1/v = -1/u + 1/f ⟺ y = mx + c
-                            </p>
+                            <p className="mt-2 text-xs">Rearranging: 1/v = -1/u + 1/f ⟺ y = mx + c</p>
                         </div>
 
                         <div>
@@ -269,7 +267,7 @@ export const Task2 = ({ isSmallViewport }) => {
                         <div>
                             <h4 className="font-semibold text-base text-gray-800 mb-2">Experimental Method</h4>
                             <p className="mb-2">
-                                The graph plots 1/v against 1/u for measured object and image distances. According to the thin lens equation, this should yield a straight line with slope -1 and y-intercept 1/f, allowing direct determination of the focal length from experimental data.
+                                The graph plots 1/v against 1/u corresponding to the measured image and object distances respectively. According to the thin lens equation, this yields a straight line with slope -1 and y-intercept 1/f, allowing direct determination of the focal length.
                             </p>
                         </div>
                     </Accordion>

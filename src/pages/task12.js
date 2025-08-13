@@ -33,6 +33,7 @@ import {
     toDeg
 } from '../math_functions';
 import {ZoomableChartWrapper} from '../components/ZoomableChartWrapper';
+import Accordion from '../components/Accordion';
 
 const A_COEFF = [1.03961212, 0.231792344, 1.01046945];
 const B_COEFF = [0.00600069867, 0.0200179144, 103.560653];
@@ -384,6 +385,20 @@ export const Task12 = ({isSmallViewport, headerHeight}) => {
                         />
                     </Group>
                 </OpticsGrid>
+            </div>
+
+            <div className="mt-6">
+                <Accordion title="How an Isosceles Prism Deviates Light" defaultOpen={false}>
+                    <div>
+                        <p className="mb-2 text-sm text-gray-700">
+                            As light passes through an isosceles prism, it refracts at entry and exit. Because the refractive index varies with wavelength (dispersion), different wavelengths bend by different amounts. The extent of deviation depends on:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-sm">
+                            <li><strong>Apex angle (α):</strong> Larger α increases overall deviation and widens the spectral spread.</li>
+                            <li><strong>Frequency (or wavelength):</strong> Higher frequency (shorter wavelength) light experiences larger deviation.</li>
+                        </ul>
+                    </div>
+                </Accordion>
             </div>
 
             <div className="mt-8">

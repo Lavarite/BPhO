@@ -63,9 +63,9 @@ export const Task1b = ({ isSmallViewport }) => {
         <div className={`w-full ${isSmallViewport ? '' : 'max-w-7xl mx-auto p-4'}`}>
             <h1 className="text-2xl font-bold mb-6 text-gray-800">Task 1b: Water Refractive Index and Dispersion</h1>
 
-            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6`}>
+            <div className={`grid ${isSmallViewport ? 'grid-cols-1' : 'grid-cols-10'} gap-6 items-start`}>
                 
-                <div className={`${isSmallViewport ? 'col-span-1' : 'col-span-6'} bg-white border border-gray-200 rounded-lg p-4 shadow relative pb-10`}>
+                <div className={`${isSmallViewport ? 'col-span-1' : 'col-span-6'} bg-white border border-gray-200 rounded-lg p-4 shadow relative pb-10 h-fit`}>
                     <h2 className="text-xl font-semibold text-gray-700 mb-1">Refractive Index vs. Frequency</h2>
                     <p className="text-sm text-gray-500 mb-4">Water (380 THz - 740 THz)</p>
                     <ZoomableChartWrapper data={waterRefractiveData} xKey="frequency" yKeys={['n']} height={isSmallViewport ? 300 : 400}>
@@ -140,11 +140,16 @@ export const Task1b = ({ isSmallViewport }) => {
                             <h4 className="font-semibold text-base text-gray-800 mb-2">Water's Dispersion Model</h4>
                             <p className="mb-2">
                                 Water's refractive index varies with frequency due to molecular absorption resonances. 
-                                This empirical model captures the dispersion:
+                                This empirical model captures the dispersion and its parameters:
                             </p>
                             <div className="bg-gray-100 p-2 mt-1 rounded text-xs font-mono">
                                 n = √(1 + 1/√(C₁ - C₂f²/f₀²))
                             </div>
+                             <ul className="list-disc pl-5 space-y-1 mt-2 text-xs">
+                                 <li><strong>f</strong>: frequency of light</li>
+                                 <li><strong>f₀</strong>: resonance frequency</li>
+                                 <li><strong>C₁, C₂</strong>: empirical constants (here C₁ = 1.731, C₂ = 0.261)</li>
+                             </ul>
                         </div>
 
                         <div>
@@ -155,15 +160,15 @@ export const Task1b = ({ isSmallViewport }) => {
                             <ul className="list-disc pl-5 space-y-1">
                                 <li><strong>Molecular vibrations</strong>: H-O stretching and bending modes</li>
                                 <li><strong>Electronic transitions</strong>: UV absorption bands</li>
-                                <li><strong>Hydrogen bonding</strong>: Affects molecular response</li>
+                                <li><strong>Hydrogen bonding</strong>: Alters how molecules vibrate and respond</li>
                             </ul>
-                            <p className="mb-2">Where the constants represent collective molecular properties</p>
+                            <p className="mb-2 text-xs text-gray-600">The constants represent collective molecular properties influencing dispersion.</p>
                         </div>
 
                         <div>
                             <h4 className="font-semibold text-base text-gray-800 mb-2">Observed Behavior</h4>
                             <ul className="list-disc pl-5 space-y-1">
-                                <li><strong>Correlation</strong>: n increases with frequency in visible range</li>
+                                <li><strong>Correlation</strong>: Refractive index n increases with frequency over the visible range</li>
                                 <li><strong>Blue light</strong>: Higher refractive index (~1.337)</li>
                                 <li><strong>Red light</strong>: Lower refractive index (~1.331)</li>
                                 <li><strong>Light speed</strong>: v = c/n ≈ 2.25 * 10⁸ m/s in water</li>
@@ -173,8 +178,14 @@ export const Task1b = ({ isSmallViewport }) => {
                         <div>
                             <h4 className="font-semibold text-base text-gray-800 mb-2">Applications</h4>
                             <ul className="list-disc pl-5 space-y-1">
-                                <li><strong>Rainbow formation</strong>: Dispersion in water droplets</li>
-                                <li><strong>Oceanography</strong>: Light penetration depths</li>
+                                <li>
+                                    <strong>Rainbow formation</strong>: Light refracts inside droplets and disperses into a spectrum. 
+                                    <a href="https://global.canon/en/technology/s_labo/light/001/02.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">Overview</a>
+                                </li>
+                                <li>
+                                    <strong>Oceanography</strong>: Dispersion affects underwater visibility and photosynthetic light availability. 
+                                    <a href="https://manoa.hawaii.edu/exploringourfluidearth/physical/ocean-depths/light-ocean" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline ml-1">More</a>
+                                </li>
                             </ul>
                         </div>
                     </Accordion>

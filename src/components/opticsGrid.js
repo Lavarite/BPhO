@@ -201,8 +201,10 @@ export const OpticsGrid = ({
         stage.stopDrag();
       }
 
-      const p1 = { x: touch1.clientX, y: touch1.clientY };
-      const p2 = { x: touch2.clientX, y: touch2.clientY };
+      const containerEl = containerRef.current || stage.container();
+      const rect = containerEl.getBoundingClientRect();
+      const p1 = { x: touch1.clientX - rect.left, y: touch1.clientY - rect.top };
+      const p2 = { x: touch2.clientX - rect.left, y: touch2.clientY - rect.top };
 
       if (!lastCenter.current) {
         lastCenter.current = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
@@ -222,12 +224,9 @@ export const OpticsGrid = ({
       const baseScale = baseScaleRef.current;
       const newScale = max(baseScale * MIN_ZOOM_FACTOR, min(baseScale * MAX_ZOOM_FACTOR, scale));
       
-      const dx = newCenter.x - lastCenter.current.x;
-      const dy = newCenter.y - lastCenter.current.y;
-
       const newPos = {
-        x: newCenter.x - pointTo.x * newScale + dx,
-        y: newCenter.y - pointTo.y * newScale + dy,
+        x: newCenter.x - pointTo.x * newScale,
+        y: newCenter.y - pointTo.y * newScale,
       };
 
       setStageScale(newScale);

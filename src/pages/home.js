@@ -32,14 +32,14 @@ export const HomePage = ({ isSmallViewport }) => {
           'Task 12 — Prism dispersion'
         ]}/>
         <SectionCard title="Extensions" colour="bg-yellow-100" tasks={[
-          'Vision simulator',
-          'Problem solutions'
+          'Vision simulation',
+          'Problem solutions',
+          'Gravitational lensing'
         ]}/>
       </div>
 
       <p className="text-sm text-gray-500 mt-8 max-w-prose">
-        The simulations are designed with a <span className="font-semibold">mobile-first</span> layout and support pinch-zoom or drag-to-zoom on the plots.
-        Source code is written in&nbsp;React, Recharts and&nbsp;Konva; feel free to explore and adapt it for your own projects.
+        Source code is written in JavaScript using React, Recharts and Konva frameworks/libraries. Feel free to explore and adapt it for your own projects.
       </p>
     </div>
   );
